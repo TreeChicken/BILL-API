@@ -15,8 +15,15 @@ public class TestDriver {
 		
 		Bill bill = new Bill(username, password);
 		
-		Student p = (Student)bill.parseUserFromPage("naleung");
+		System.out.println(bill.getNews());
+		
+		Student p = (Student)bill.parseUserFromPage("raweng");
 		System.out.println(p.getCourses());
+		
+		while(true){
+			float now = System.nanoTime();
+			System.out.println(System.nanoTime() - now);
+		}
 		
 
 	}

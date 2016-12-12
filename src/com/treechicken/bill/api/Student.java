@@ -2,6 +2,12 @@ package com.treechicken.bill.api;
 
 import java.util.ArrayList;
 
+/**
+ * Creates a student
+ * 
+ *
+ */
+
 public class Student extends User{
 
 	private int year;

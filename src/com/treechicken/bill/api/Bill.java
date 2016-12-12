@@ -263,6 +263,26 @@ public class Bill {
 		
 	}
 	
+	/**
+	 * Gets a list of news
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	public ArrayList<String> getNews() throws IOException{
+		
+		String inf = Connect.navigate("/home").body().toString();
+		String[] infList = inf.split("silverchips.mbhs.edu");
+		
+		ArrayList<String> newsList = new ArrayList<String>();
+		
+		for(int i = 2; i < infList.length; i++){
+			newsList.add(infList[i].substring(infList[i].indexOf("<b>") + 3, infList[i].indexOf("</b>")));
+		}
+		
+		return newsList;
+	}
+	
 	
 	
 }
