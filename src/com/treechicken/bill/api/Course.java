@@ -26,8 +26,8 @@ public class Course {
 		name = nm;
 		hrefName = hNm;
 		period = p;
-		t = teacher;
-		r = room;
+		teacher = t;
+		room = r;
 	}
 	
 	//Getters and setters
@@ -72,7 +72,7 @@ public class Course {
 	}
 
 	public String toString(){
-		return name + ":" + period;
+		return period + ":" + name + ":" + teacher;
 	}
 	
 }
