@@ -1,28 +1,22 @@
 package com.treechicken.bill.api;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.FormElement;
-import org.jsoup.select.Elements;
 
 public class TestDriver {
 
 	public static void main(String[] args) throws IOException {
 		
-		Scanner reader = new Scanner(System.in);
+		Scanner reader = new Scanner(new File("authcreds.txt"));
 
-		String username = "get yur own";
-		String password = "same here, bro";
+		String username = reader.nextLine();
+		String password = reader.nextLine();
 		
 		Bill bill = new Bill(username, password);
-		bill.parseFriends();
 		
-		User p = bill.parseUserFromPage("sejoo");
+		Student p = (Student)bill.parseUserFromPage("naleung");
+		System.out.println(p.getCourses());
 		
 
 	}
